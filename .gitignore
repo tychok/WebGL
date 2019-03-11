@@ -3,3 +3,5 @@
 ################################################################################
 
 /WebGLService/bin/Debug/netcoreapp2.0
+/WebGLService/obj
+/WebGL/wwwroot
