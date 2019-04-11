@@ -1,0 +1,51 @@
+﻿
+<div>
+    <canvas style="display:none" id="webglcanvas"></canvas>
+
+
+</div>
+
+<div>
+    <div>
+        <p>
+            vertex shader:
+        </p>
+        <textarea id="vertexshader" rows="15" cols="100">
+        
+        </textarea>
+        <button (click)="compileVertex()">compile</button>
+        <div *ngIf="errorVertexShader">
+            <strong>error</strong> {{errorVertexShader}}
+        </div>
+        <div *ngIf="VertexShaderSucces && !errorVertexShader">
+            <strong>Vertex shader compiled succesfully</strong>
+        </div>
+
+    </div>
+    <div>
+        <p>
+            fragment shader:
+        </p>
+        <textarea id="fragmentshader" rows="15" cols="100">
+        
+        </textarea>
+        <button (click)="compileFragment()">compile</button>
+        <div *ngIf="errorFragemtShader">
+            <strong>error</strong> {{errorFragemtShader}}
+        </div>
+        <div *ngIf="FragmentShaderSucces && !errorFragemtShader">
+            <strong>Fragment shader compiled succesfully</strong>
+        </div>
+    </div>
+    <button *ngIf="errorFragemtShader==null && errorVertexShader==null" (click)="linkShaders()">link</button>
+    <button *ngIf="errorFragemtShader==null &&errorLinkerError == null && errorVertexShader==null" (click)="saveShaders()">save</button>
+    <div *ngIf="errorLinkerError">
+        <strong>error</strong> {{errorLinkerError}}
+    </div>
+    <div *ngIf="LinkSucces && !errorLinkerError">
+        <strong>Linking shaders succes</strong>
+    </div>
+    <div *ngIf="ShadersSaved">
+        <strong>Shaders are saved on the server</strong>
+    </div>
+</div>

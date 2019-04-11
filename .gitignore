@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/node_modules/spectorjs
+/WebGL/wwwroot
+/WebGLService/bin/Debug/netcoreapp2.0
+/WebGLService/obj
